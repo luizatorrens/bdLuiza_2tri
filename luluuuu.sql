@@ -63,7 +63,7 @@ FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
 CREATE TABLE doacao (
 cod_ong int not null,
 cod_usuario int not null,
-dt_doacao date getdate,
+dt_doacao date not null,
 valor_doacao decimal(10,2) not null,
 FOREIGN KEY(cod_ong) REFERENCES ong (cod_ong),
 FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
@@ -72,7 +72,7 @@ FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
 CREATE TABLE voluntario (
 cod_ong int not null,
 cod_usuario int not null,
-dt_voluntario date getdate,
+dt_voluntario date not null,
 FOREIGN KEY(cod_ong) REFERENCES ong (cod_ong),
 FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
 );
