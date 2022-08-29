@@ -1,4 +1,4 @@
--- Geração de Modelo físico
+-- GeraÃ§Ã£o de Modelo fÃ­sico
 -- Sql ANSI 2003 - brModelo.
 
 
@@ -46,7 +46,7 @@ FOREIGN KEY(cod_ong) REFERENCES ong (cod_ong)
 CREATE TABLE comenta (
 cod_postagem int auto_increment unique,
 cod_usuario int not null,
-dathora_coment timestamp current_time,
+dathora_coment timestamp default current_timestamp,
 texto_coment varchar(250) not null,
 FOREIGN KEY(cod_postagem) REFERENCES postagem (cod_postagem),
 FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
@@ -55,7 +55,7 @@ FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
 CREATE TABLE curtir (
 cod_postagem int not null,
 cod_usuario int not null,
-dathora_curtir timestamp current_time,
+dathora_curtir timestamp default current_timestamp,
 FOREIGN KEY(cod_postagem) REFERENCES postagem (cod_postagem),
 FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
 );
@@ -63,7 +63,7 @@ FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
 CREATE TABLE doacao (
 cod_ong int not null,
 cod_usuario int not null,
-dt_doacao date current_date,
+dt_doacao date getdate,
 valor_doacao decimal(10,2) not null,
 FOREIGN KEY(cod_ong) REFERENCES ong (cod_ong),
 FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
@@ -72,7 +72,7 @@ FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
 CREATE TABLE voluntario (
 cod_ong int not null,
 cod_usuario int not null,
-dt_voluntario date current_date,
+dt_voluntario date getdate,
 FOREIGN KEY(cod_ong) REFERENCES ong (cod_ong),
 FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
 );
