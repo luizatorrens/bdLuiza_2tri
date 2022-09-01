@@ -1,5 +1,5 @@
-create database luiza_ongbd;
-use luiza_ongbd;
+create database ongluizaBD;
+use ongluizaBD;
 
 CREATE TABLE tipo_usuario (
 cod_tipuser int auto_increment unique PRIMARY KEY,
